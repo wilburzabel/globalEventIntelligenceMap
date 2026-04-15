@@ -69,20 +69,7 @@ cp .env.example .env.local
 - `NEWS_API_LOCALE`
 - `EVENTS_CACHE_TTL_MS`
 
-### 作品截图
-将截图放在 `docs/screenshots/` 下，并按需更新路径：
 
-- 全局仪表盘：`docs/screenshots/dashboard-global.png`
-- 事件面板（筛选 + AI）：`docs/screenshots/event-panel.png`
-- 全球热点 + 原因解释：`docs/screenshots/global-hotspots.png`
-- 影响链 / 影响路径：`docs/screenshots/impact-chain.png`
-
-示例：
-
-```md
-![Dashboard Global](docs/screenshots/dashboard-global.png)
-![Event Panel](docs/screenshots/event-panel.png)
-```
 
 ### 安全说明
 - 不要在源码中硬编码 API Key。
@@ -145,24 +132,6 @@ npm run start
 - Client fetch failure: fallback payload on client side.
 - AI analysis failure/timeout/invalid JSON: returns structured local fallback result.
 
-## Screenshots (Portfolio)
-Put images under `docs/screenshots/` and update paths below:
-
-- Dashboard (Global View)
-  - `docs/screenshots/dashboard-global.png`
-- Event Panel (Filters + AI)
-  - `docs/screenshots/event-panel.png`
-- Global Hotspots + Why Important
-  - `docs/screenshots/global-hotspots.png`
-- Impact Chain / Impact Path
-  - `docs/screenshots/impact-chain.png`
-
-Example markdown:
-
-```md
-![Dashboard Global](docs/screenshots/dashboard-global.png)
-![Event Panel](docs/screenshots/event-panel.png)
-```
 
 ## Security Notes
 - Do not hardcode API keys in source code.
