@@ -1,5 +1,95 @@
 # Global Event Intelligence Map
 
+## 中文说明（优先）
+
+这是一个用于宏观事件追踪与可视化的 Next.js 项目，主要能力包括：
+- 全球/国家双视图事件流
+- 自动/手动 AI 分析
+- 全球热点排序与原因解释
+- 影响链（impactChain）与影响路径（impactPath）展示
+- 质量过滤 + 多层 fallback 容错
+
+### 快速开始（中文）
+
+1. 复制环境变量模板：
+
+```bash
+cp .env.example .env.local
+```
+
+2. 安装并启动：
+
+```bash
+npm install
+npm run dev
+```
+
+3. 生产构建与启动：
+
+```bash
+npm run build
+npm run start
+```
+
+### 部署到 Vercel（中文）
+
+1. 将仓库导入 Vercel。
+2. 在 Project Settings -> Environment Variables 中配置与 `.env.example` 同名变量。
+3. 使用默认构建命令 `npm run build` 部署。
+
+### 稳定性与容错（中文）
+
+- 新闻 API 失败或返回空：自动回退到 mock 数据。
+- `/api/events` 异常：仍返回可用 fallback 结果，不会让页面崩溃。
+- 客户端拉取失败：客户端侧继续回退展示。
+- AI 分析失败/超时/JSON 解析失败：返回本地结构化 fallback 分析结果。
+
+### 技术栈
+- Next.js 16（App Router）
+- React 19
+- TypeScript
+- Tailwind CSS
+
+### 环境变量
+本地开发使用 `.env.local`，可直接基于 `.env.example` 复制：
+
+```bash
+cp .env.example .env.local
+```
+
+必填（至少一个新闻源 key）：
+- `NEWS_PROVIDER`（`newsapi_org | newsdata_io | thenewsapi`）
+- `NEWS_API_KEY` 或 provider 专用 key
+  - `NEWSDATA_IO_API_KEY`
+  - `THENEWSAPI_API_KEY`
+
+可选：
+- `NEWS_API_LANG`
+- `NEWS_API_MAX`
+- `NEWS_API_LOCALE`
+- `EVENTS_CACHE_TTL_MS`
+
+### 作品截图
+将截图放在 `docs/screenshots/` 下，并按需更新路径：
+
+- 全局仪表盘：`docs/screenshots/dashboard-global.png`
+- 事件面板（筛选 + AI）：`docs/screenshots/event-panel.png`
+- 全球热点 + 原因解释：`docs/screenshots/global-hotspots.png`
+- 影响链 / 影响路径：`docs/screenshots/impact-chain.png`
+
+示例：
+
+```md
+![Dashboard Global](docs/screenshots/dashboard-global.png)
+![Event Panel](docs/screenshots/event-panel.png)
+```
+
+### 安全说明
+- 不要在源码中硬编码 API Key。
+- 不要提交 `.env.local`。
+
+## English Appendix
+
 A Next.js app for macro event monitoring with:
 - global/country event views
 - auto/manual AI analysis
